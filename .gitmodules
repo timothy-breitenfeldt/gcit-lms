@@ -1,0 +1,4 @@
+[submodule "ngLms"]
+	path = ngLms
+	url = https://github.com/lraulin-smoothstack/ngLms.git
+	branch = master

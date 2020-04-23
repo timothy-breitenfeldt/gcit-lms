@@ -1,1 +1,1 @@
-# gcit-lms
+# GCIT Library Management System
