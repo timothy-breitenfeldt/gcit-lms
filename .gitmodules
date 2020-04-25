@@ -2,3 +2,19 @@
 	path = ngLms
 	url = https://github.com/lraulin-smoothstack/ngLms.git
 	branch = master
+[submodule "borrower-microservice"]
+	path = borrower-microservice
+	url = https://github.com/lraulin-smoothstack/borrower-microservice.git
+	branch = master
+[submodule "librarian-microservice"]
+	path = librarian-microservice
+	url = https://github.com/timothy-breitenfeldt/librarian-microservice.git
+	branch = master
+[submodule "administrator-microservice"]
+	path = administrator-microservice
+	url = https://github.com/lraulin-smoothstack/administrator-microservice.git
+	branch = master
+[submodule "eureka-microservice"]
+	path = eureka-microservice
+	url = https://github.com/timothy-breitenfeldt/eureka-microservice.git
+	branch = master
