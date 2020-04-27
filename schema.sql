@@ -2,8 +2,6 @@
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
-SET foreign_key_checks = 0;
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 DROP TABLE IF EXISTS `author`;
 CREATE TABLE `author` (
@@ -11,6 +9,7 @@ CREATE TABLE `author` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
 
 DROP TABLE IF EXISTS `book`;
 CREATE TABLE `book` (
@@ -22,6 +21,7 @@ CREATE TABLE `book` (
   CONSTRAINT `FKgtvt7p649s4x80y6f4842pnfq` FOREIGN KEY (`publisher_id`) REFERENCES `publisher` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
+
 DROP TABLE IF EXISTS `book_authors`;
 CREATE TABLE `book_authors` (
   `book_id` bigint(20) NOT NULL,
@@ -31,6 +31,7 @@ CREATE TABLE `book_authors` (
   CONSTRAINT `FK78gu95lglhc6cs2u5jfudx6e5` FOREIGN KEY (`author_id`) REFERENCES `author` (`id`),
   CONSTRAINT `FKs4xm7q8i3uxvaiswj1c35nnxw` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 DROP TABLE IF EXISTS `book_copy`;
 CREATE TABLE `book_copy` (
@@ -43,6 +44,7 @@ CREATE TABLE `book_copy` (
   CONSTRAINT `FKpqftp65hd66ae8wsx7pp2cxcs` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 DROP TABLE IF EXISTS `book_genres`;
 CREATE TABLE `book_genres` (
   `book_id` bigint(20) NOT NULL,
@@ -52,6 +54,7 @@ CREATE TABLE `book_genres` (
   CONSTRAINT `FK6soimqwnss59p5wt6m3afnuoo` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`),
   CONSTRAINT `FK9h3nddtxgapfvc95fjt1x146m` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 DROP TABLE IF EXISTS `book_loan`;
 CREATE TABLE `book_loan` (
@@ -69,6 +72,7 @@ CREATE TABLE `book_loan` (
   CONSTRAINT `FKlyufp6fqdud9tfeqvm1es51w` FOREIGN KEY (`branch_id`) REFERENCES `library_branch` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 DROP TABLE IF EXISTS `borrower`;
 CREATE TABLE `borrower` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -78,12 +82,14 @@ CREATE TABLE `borrower` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
+
 DROP TABLE IF EXISTS `genre`;
 CREATE TABLE `genre` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
 
 DROP TABLE IF EXISTS `library_branch`;
 CREATE TABLE `library_branch` (
@@ -92,6 +98,7 @@ CREATE TABLE `library_branch` (
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
 
 DROP TABLE IF EXISTS `publisher`;
 CREATE TABLE `publisher` (
@@ -102,4 +109,16 @@ CREATE TABLE `publisher` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- 2020-04-25 20:17:05
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `password` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_sb8bbouer5wak8vyiiy4pf2bx` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- 2020-04-27 01:35:17

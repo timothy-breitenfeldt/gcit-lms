@@ -18,3 +18,7 @@
 	path = eureka-microservice
 	url = https://github.com/timothy-breitenfeldt/eureka-microservice.git
 	branch = master
+[submodule "orchestrator-microservice"]
+	path = orchestrator-microservice
+	url = https://github.com/timothy-breitenfeldt/orchestrator-microservice.git
+	branch = master
