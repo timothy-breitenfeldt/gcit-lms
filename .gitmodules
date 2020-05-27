@@ -22,3 +22,7 @@
 	path = orchestrator-microservice
 	url = https://github.com/timothy-breitenfeldt/orchestrator-microservice.git
 	branch = master
+[submodule "microservices-single-swagger"]
+	path = microservices-single-swagger
+	url = https://github.com/SS-MW/microservices-single-swagger.git
+	branch = master
