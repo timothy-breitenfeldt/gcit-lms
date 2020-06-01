@@ -9,6 +9,8 @@ DROP TABLE IF EXISTS publisher;
 DROP TABLE IF EXISTS author;
 DROP TABLE IF EXISTS library_branch;
 DROP TABLE IF EXISTS borrower;
+DROP TABLE IF EXISTS user;
+
 
 CREATE TABLE borrower (
   id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -93,9 +95,11 @@ CREATE TABLE book_copy (
 
 CREATE TABLE user (
   id bigint(20) NOT NULL AUTO_INCREMENT,
-  password varchar(255) DEFAULT NULL,
-  role varchar(255) DEFAULT NULL,
-  username varchar(255) NOT NULL,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  email varchar(255) NOT NULL,
+  password varchar(255) NOT NULL,
+  role ENUM('ROLE_LIBRARIAN', 'ROLE_ADMIN') NOT NULL,
   PRIMARY KEY (id),
-  UNIQUE KEY (username)
+  UNIQUE KEY (email)
 );
